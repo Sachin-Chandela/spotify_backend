@@ -23,3 +23,8 @@ const router=Router();
 
 
 export default app;
+
+
+
+
+// add the url  where the user can see all the musics created by all the artists
