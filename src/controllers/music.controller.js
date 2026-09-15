@@ -5,6 +5,9 @@ import music_model from '../models/music.model.js';
 
 
 
+
+
+
 async function create_music(req,res){
     // in req i got a file and in the body a json with the title
 
@@ -85,12 +88,6 @@ async function create_music(req,res){
 
     // push this into the image kit get the uri create a new entry in the model with the url and the title and also the
     // user id
-
-
-
-
-
-
 
 }
 

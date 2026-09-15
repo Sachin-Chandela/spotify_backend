@@ -19,6 +19,7 @@ const upload=multer({
 
 
 router.post('/upload',upload.single("music"),create_music);
+// router.post('/',view_music);
 
 
 
