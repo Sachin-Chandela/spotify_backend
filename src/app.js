@@ -18,6 +18,7 @@ app.use('/api/auth',authroutes)
 app.use('/api/music',musicroutes);
 app.use('/api/album',albumroutes);
 
+
 const router=Router();
 
 
@@ -27,4 +28,4 @@ export default app;
 
 
 
-// add the url  where the user can see all the musics created by all the artists
+// the atrist can view all its album when he goes to the /api/album

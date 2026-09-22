@@ -17,6 +17,7 @@ export async function create_album(req,res){
         artist:decoded.id
     })
 
+    
 
     res.status(201).json({
         success:true,
@@ -25,5 +26,38 @@ export async function create_album(req,res){
     })
 
 }
+
+
+
+export async function view_album(req,res){
+
+    const artist=req.user;
+
+    try{
+
+        const albums=await album_model.find({artist:artist.id}).populate("musics");
+
+        return res.status(200).json({
+            success:true,
+            message:"all albums found",
+            ablums:albums
+        })
+
+    }
+    catch(err){
+        return res.status(401).json({
+          success: false,
+          message: "Error"
+        }); 
+    }
+    
+
+
+
+
+}
+
+
+
 
 

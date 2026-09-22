@@ -1,7 +1,8 @@
 import { Router } from "express";
 import express from 'express';
 
-import create_music from "../controllers/music.controller.js";
+import { create_music, view_all_music } from "../controllers/music.controller.js";
+import { authUser } from "../middlewares/auth.user.middleware.js";
 
 import multer from "multer";
 
@@ -19,9 +20,8 @@ const upload=multer({
 
 
 router.post('/upload',upload.single("music"),create_music);
-// router.post('/',view_music);
 
-
+router.get('/',authUser,view_all_music);
 
 export default router;
 

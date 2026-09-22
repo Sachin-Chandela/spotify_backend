@@ -6,7 +6,7 @@ import mongoose, { Schema } from "mongoose";
 
 const album_schema=new Schema({
     title:{
-        type:"String",
+        type:String,
         required:true,
     },
     

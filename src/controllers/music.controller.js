@@ -8,7 +8,7 @@ import music_model from '../models/music.model.js';
 
 
 
-async function create_music(req,res){
+export async function create_music(req,res){
     // in req i got a file and in the body a json with the title
 
     // first check that does it have the token or not
@@ -92,4 +92,29 @@ async function create_music(req,res){
 }
 
 
-export default create_music;
+
+export async function view_all_music(req,res) {
+
+    try{
+
+        const musics=await music_model.find();
+
+        return res.status(200).json({
+          success: true,
+          message: "all music found",
+          musics: musics,
+        }); 
+
+    }
+    catch(err){
+
+        return res.status(401).json({
+          success: false,
+          message: "Error"
+        }); 
+
+
+
+    }
+      
+}
