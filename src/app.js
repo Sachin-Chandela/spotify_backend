@@ -27,5 +27,3 @@ export default app;
 
 
 
-
-// the atrist can view all its album when he goes to the /api/album
